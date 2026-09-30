@@ -1,0 +1,390 @@
+﻿```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OptiJere | System Optimizer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #050805;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* BARRA SUPERIOR */
+        header {
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1cff5b33;
+            background: #071007;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #19ff5b;
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #19ff5b;
+        }
+
+        /* INICIO */
+        .hero {
+            min-height: 82vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid #19ff5b;
+            border-radius: 30px;
+            color: #19ff5b;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(45px, 9vw, 90px);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #19ff5b;
+            text-shadow: 0 0 25px #19ff5b55;
+        }
+
+        .subtitle {
+            color: #aaa;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.25s;
+        }
+
+        .primary {
+            background: #19ff5b;
+            color: #031006;
+        }
+
+        .primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px #19ff5b55;
+        }
+
+        .secondary {
+            border: 1px solid #19ff5b;
+            color: #19ff5b;
+        }
+
+        .secondary:hover {
+            background: #19ff5b12;
+        }
+
+        /* SECCIONES */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #19ff5b;
+        }
+
+        /* TARJETAS */
+        .cards {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #0a100a;
+            border: 1px solid #19ff5b22;
+            border-radius: 14px;
+            padding: 28px;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #19ff5b66;
+        }
+
+        .icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #19ff5b;
+        }
+
+        .card p {
+            color: #999;
+            line-height: 1.5;
+        }
+
+        /* DESCARGA */
+        .download {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            background: #091109;
+            border: 1px solid #19ff5b44;
+            border-radius: 18px;
+            padding: 50px 25px;
+            box-shadow: 0 0 50px #19ff5b0a;
+        }
+
+        .download h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .download p {
+            color: #999;
+            margin-bottom: 30px;
+        }
+
+        .version {
+            color: #19ff5b;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #19ff5b22;
+            color: #666;
+        }
+
+        footer span {
+            color: #19ff5b;
+        }
+
+        /* CELULAR */
+        @media (max-width: 650px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABECERA -->
+    <header>
+        <div class="logo">OPTIJERE</div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#funciones">Funciones</a>
+            <a href="#descargar">Descargar</a>
+        </nav>
+    </header>
+
+
+    <!-- INICIO -->
+    <main id="inicio">
+        <div class="hero">
+            <div class="hero-content">
+
+                <div class="badge">
+                    SYSTEM OPTIMIZER
+                </div>
+
+                <h1>
+                    OPTI<span>JERE</span>
+                </h1>
+
+                <p class="subtitle">
+                    Herramienta ligera para optimizar y mantener tu PC
+                    de una manera sencilla, rápida y segura.
+                </p>
+
+                <div class="buttons">
+                    <a href="#descargar" class="button primary">
+                        Descargar Opti10
+                    </a>
+
+                    <a href="#funciones" class="button secondary">
+                        Ver funciones
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <!-- FUNCIONES -->
+    <section id="funciones">
+
+        <h2 class="section-title">
+            ¿Qué tiene <span>OptiJere?</span>
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">?</div>
+                <h3>Optimización</h3>
+                <p>
+                    Herramientas pensadas para ayudar a mejorar
+                    el rendimiento general del sistema.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">??</div>
+                <h3>Limpieza</h3>
+                <p>
+                    Accesos rápidos para realizar tareas de
+                    mantenimiento y limpieza del sistema.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">???</div>
+                <h3>Herramientas</h3>
+                <p>
+                    Una colección de herramientas útiles
+                    reunidas en un solo lugar.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">??</div>
+                <h3>Ligero</h3>
+                <p>
+                    Diseñado para ser sencillo y consumir
+                    pocos recursos.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DESCARGA -->
+    <section id="descargar">
+
+        <div class="download">
+
+            <h2>Descargar <span style="color:#19ff5b;">Opti10</span></h2>
+
+            <p>
+                Descargá la versión de Opti10 y empezá a utilizar
+                las herramientas de OptiJere.
+            </p>
+
+            <!--
+                IMPORTANTE:
+                Cambiá el enlace de abajo por la ubicación real
+                de tu archivo Opti10.
+            -->
+
+            <a
+                href="Optijerev3.bat"
+                class="button primary"
+                download>"Optijerev3.bat">
+                ? Descargar Opti10
+            </a>
+
+            <div class="version">
+                OptiJere • Opti10
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        © 2026 <span>OptiJere</span> — System Optimizer
+    </footer>
+
+</body>
+</html>
+```
